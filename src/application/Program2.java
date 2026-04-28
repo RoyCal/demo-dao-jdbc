@@ -23,6 +23,12 @@ public class Program2 {
 		Department dep = new Department(3, "Construction");
 		departmentDao.update(dep);
 		System.out.println("Update completed!");
+		
+		System.out.println("\n=== TEST 3: department delete ===");
+		System.out.print("Enter Id of department to delete: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed!");
 
 		sc.close();
 
