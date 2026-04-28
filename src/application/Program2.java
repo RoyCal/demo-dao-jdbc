@@ -13,14 +13,19 @@ public class Program2 {
 		Scanner sc = new Scanner(System.in);
 
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
-		
+
 		System.out.println("=== TEST 1: department insert ===");
-		Department dep = new Department(null, "Engineering");
-		departmentDao.insert(dep);
-		System.out.println("New department inserted! Id = " + dep.getId());
+		Department newDepartment = new Department(null, "Engineering");
+		departmentDao.insert(newDepartment);
+		System.out.println("New department inserted! Id = " + newDepartment.getId());
 		
+		System.out.println("\n=== TEST 2: department update ===");
+		Department dep = new Department(3, "Construction");
+		departmentDao.update(dep);
+		System.out.println("Update completed!");
+
 		sc.close();
 
-	}
+	} 
 
 }
